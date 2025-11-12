@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+
 enum Product {
   dart("assets/dart.png", "Dart", "The best object language"),
   flutter("assets/flutter.png", "Flutter", "The best widget library"),
@@ -11,11 +12,11 @@ enum Product {
   const Product(this.image, this.title, this.description);
 }
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
@@ -54,26 +55,30 @@ class MyApp extends StatelessWidget{
   }
 }
 
-class ProductCard extends StatelessWidget{
+class ProductCard extends StatelessWidget {
   final Product productType;
   const ProductCard({super.key, required this.productType});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-    color: Colors.white,
-    child: Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 10,
-      children: [
-            Image(image: AssetImage(productType.image), width: 100, height: 100),
-            Text(productType.title , style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-            )),
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 10,
+          children: [
+            Image(
+              image: AssetImage(productType.image),
+              width: 100,
+              height: 100,
+            ),
+            Text(
+              productType.title,
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            ),
             Text(productType.description),
           ],
         ),
